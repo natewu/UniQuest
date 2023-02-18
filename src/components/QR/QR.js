@@ -8,12 +8,12 @@ export function QR({id}){
    //🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒
 
    const [data, setData] = useState([{}]);
-   const [data1, setData1] = useState([{}]);
+   const [data1, setData1] = useState("Loading...");
 
    useEffect(() => {
       const interval = setInterval(() => {
-
-         fetch(`/getQR?id=1`)
+         let s = 1
+         fetch(`/getQR?id=${s}`)
         .then((res) => res.json())
         .then((data) => {
           setData(data);
