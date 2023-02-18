@@ -2,6 +2,11 @@ from app import db,ma
 from datetime import datetime
 from sqlalchemy import event
 
+
+user_to_screenQR = db.Table('user_to_screenQR',
+                    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+                    db.Column('screen_id', db.Integer, db.ForeignKey('screen.id'))
+                    )
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     firstName = db.Column(db.String(20), nullable=False)
@@ -10,12 +15,15 @@ class User(db.Model):
     password = db.Column(db.String(60))    
     points = db.Column(db.Integer, default=0)
     
+    screens = db.relationship('Screen', secondary=user_to_screenQR, backref='users')
+    
 class Screen(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60))    
     # The current string represented by QR code on this screen
     curString = db.Column(db.String(60))    
+
 
 # Generate marshmallow Schemas from your models
 class UsersShema(ma.Schema):
