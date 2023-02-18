@@ -1,12 +1,31 @@
+import React, { useEffect } from 'react'
+
 import { QrReader } from "react-qr-reader"
-import React from 'react'
 import styles from './Scanner.module.scss'
 
 function Scanner() {
    // const [imgSrc, setImgSrc] = React.useState(null)
-   const [data, setData] = React.useState<any>("")
+   const [data, setData] = React.useState<any>("");
+   const [res, setRes] = React.useState<any>(0);
 
-   console.log(data)
+
+   useEffect(() => {
+   
+      if(data !== ""){
+         fetch(`/validQR`, {
+            method: "POST", 
+            body: `string=${data}`,
+            headers: {
+               "Content-Type": "application/x-www-form-urlencoded"
+            }
+         })
+         .then(res => res.json())
+         .then(res => {
+            setRes(res)
+         });
+      }
+
+   }, [data]);
 
    return (
       <div className={styles.Scanner}> 
@@ -16,6 +35,11 @@ function Scanner() {
             <h1>Scanner</h1>
          <div className={styles.Webcam}>
             <QrReader 
+               // ViewFinder={(
+               //    <div className={styles.ViewFinder}>
+               //       Hi 
+               //    </div>
+               // )}
                scanDelay={50}
                onResult={(result, error) => {
                   if (!!result) {
@@ -27,7 +51,7 @@ function Scanner() {
                constraints={{facingMode: "environment"}}                
             />
          </div>
-         <h1>{data?.text}</h1>
+         <h1>{res}</h1>
       </div>
    )
 }
