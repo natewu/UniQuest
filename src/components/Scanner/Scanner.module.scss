@@ -1,15 +1,32 @@
+$RADIUS: 20px;
+
 .Scanner{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 80%;
+    height: auto;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
     justify-self: flex-end;
+    position: absolute;
+    bottom:0;
+    border-top: 1px solid #00000059;
+    padding: 1.5rem 0 0 0;
+    border-top-left-radius: $RADIUS;
+    border-top-right-radius: $RADIUS;
+    // box shadow on top of the scanner
+    box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.5);
+}
 
+.Close{
+    padding: 1px 0;
+    height: 1px;
+    .Line{
+        border-top: 1px solid #00000059;
+    }
 }
 
 .Webcam{

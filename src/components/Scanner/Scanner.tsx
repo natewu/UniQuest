@@ -1,8 +1,5 @@
 import { QrReader } from "react-qr-reader"
-// import { Camera } from "react-camera-pro"
 import React from 'react'
-// import { Result } from "node_modules/@zxing/library/esm/core/Result"
-// import Webcam from "react-webcam"
 import styles from './Scanner.module.scss'
 
 function Scanner() {
@@ -11,16 +8,21 @@ function Scanner() {
 
    return (
       <div className={styles.Scanner}> 
-         <h1>Scanner</h1>
-         <div className={styles.Webcam}>
-            <QrReader 
-            
-               onResult={(result) => {
-                  setData(result)
-               }}
+         <div className={styles.Close}>
+            <div className={styles.Line}/>
+         </div>
+         <div className={styles.Wrapper}>
+            <h1>Scanner</h1>
+            <div className={styles.Webcam}>
+               <QrReader 
                
-               constraints={{facingMode: "environment"}}                
-            />
+                  onResult={(result) => {
+                     setData(result)
+                  }}
+                  
+                  constraints={{facingMode: "environment"}}                
+               />
+            </div>
          </div>
          {/* {data.text} */}
       </div>
