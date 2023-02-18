@@ -26,6 +26,14 @@ def user():
 	return jsonify(results)
 
 # Route for to check if QR code is valid. If it is, increment by right number of points
+@app.route("/validQR", methods=["POST"], strict_slashes=False)
+def validQR():
+	screen = Screen.query.first()
+	screenData = screen_schema.dump(screen.__dict__)
+	content = request.json
+	if content["string"] == screenData["curString"]:
+		return 1
+	return 0
 '''
 @app.route("/articles", methods=["GET"], strict_slashes=False)
 def articles():
