@@ -12,7 +12,6 @@ with app.app_context():
 
 q = QRcodeManager()
 def minuteUpdate():
-	print('update')
 	with app.app_context():
 		q.updateAllQRCodes()
 
@@ -37,9 +36,9 @@ def user():
 # turn the id to the string of the QR code
 @app.route("/getQR", methods=["GET"], strict_slashes=False)
 def getQRStringFromID():
-	content = request.json
-	screen = Screen.query.get(content["id"])
-	return screen.curString
+	content = request.args
+	screen = Screen.query.get(content.get("id"))
+	return jsonify(screen.curString)
 
 # Route for to check if QR code is valid. If it is, increment by right number of points
 @app.route("/validQR", methods=["POST"], strict_slashes=False)
