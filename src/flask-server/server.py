@@ -37,7 +37,7 @@ def user():
 # turn the id to the string of the QR code
 @app.route("/getQR", methods=["GET"], strict_slashes=False)
 def getQRStringFromID():
-	content = request.json
+	content = request.args
 	screen = Screen.query.get(content["id"])
 	return screen.curString
 
