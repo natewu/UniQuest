@@ -1,0 +1,20 @@
+.HomeBanner .background-img {
+    background-image: url("images/homebanner-glasses.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+    max-width: 100%;
+  }
+
+
+  .HomeBanner h2 {
+    color: #22437c;
+    font-size: 90px;
+    font-weight: 600;
+    margin-top: 0;
+    padding-top: 200px;
+    text-align: center;
+  }
+
+
