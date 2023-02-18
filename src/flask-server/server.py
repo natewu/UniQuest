@@ -2,11 +2,20 @@ from flask import current_app,jsonify,request
 from app import create_app,db
 from models import User, users_schema,user_schema, Screen, screen_schema, screens_schema
 
+from qrCodeManager import RepeatTimer,QRcodeManager
 # Create an application instance
 app = create_app()
 
+
 with app.app_context():
 	db.create_all()
+
+q = QRcodeManager()
+def minuteUpdate():
+	print('update')
+	with app.app_context():
+		q.updateAllQRCodes()
+
 
 @app.route("/users", methods=["GET"], strict_slashes=False)
 def users():
@@ -25,6 +34,13 @@ def user():
 	
 	return jsonify(results)
 
+# turn the id to the string of the QR code
+@app.route("/getQR", methods=["GET"], strict_slashes=False)
+def getQRStringFromID():
+	content = request.json
+	screen = Screen.query.get(content["id"])
+	return screen.curString
+
 # Route for to check if QR code is valid. If it is, increment by right number of points
 @app.route("/validQR", methods=["POST"], strict_slashes=False)
 def validQR():
@@ -34,6 +50,8 @@ def validQR():
 	if content["string"] == screenData["curString"]:
 		return 1
 	return 0
+
+
 '''
 @app.route("/articles", methods=["GET"], strict_slashes=False)
 def articles():
@@ -82,4 +100,10 @@ def posts():
 	return (Post.query.first().description)
 '''
 if __name__ == "__main__":
+	#start minute timer
+	timer = RepeatTimer(5, minuteUpdate)
+	#keep this code for the thread to be killed:
+	timer.daemon = True
+	timer.start()
+	
 	app.run(debug=True)
