@@ -1,17 +1,32 @@
 import './index.scss';
 
+// import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+
 import App from './App.tsx';
-import { BrowserRouter } from 'react-router-dom';
+import { QR } from "components/QR/QR";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+  },
+  {
+    path: "/qr",
+    element: <QR/>,
+  }
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
