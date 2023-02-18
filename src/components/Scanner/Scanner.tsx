@@ -21,7 +21,8 @@ function Scanner() {
          })
          .then(res => res.json())
          .then(res => {
-            setRes(res)
+            console.log(res);
+            setRes(res.valid)
          });
       }
 
@@ -33,6 +34,7 @@ function Scanner() {
             <div className={styles.Line}/>
          </div>
             <h1>Scanner</h1>
+            <h1>{res ? "Yay!" : "Nay :("}</h1>
          <div className={styles.Webcam}>
             <QrReader 
                // ViewFinder={(
@@ -51,7 +53,6 @@ function Scanner() {
                constraints={{facingMode: "environment"}}                
             />
          </div>
-         <h1>{res}</h1>
       </div>
    )
 }

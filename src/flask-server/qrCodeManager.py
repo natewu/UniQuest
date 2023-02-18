@@ -31,13 +31,11 @@ class QRcodeManager():
         newCode = self.getNewQRCode()
         screen.curString = newCode
         db.session.commit()
-        print(newCode)
 
     def updateAllQRCodes(self):
         screens = Screen.query.all()
         for s in screens:
             self.setQRCodeForScreen(s)
         results = screens_schema.dump(screens)
-        print(results)
 
 
