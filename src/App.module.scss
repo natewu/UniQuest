@@ -3,7 +3,13 @@
   max-width: 100%;
   background: white;
   font-family: "Raleway", sans-serif;
-  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  min-width: 320px;
+  width: calc(100vh * 9 / 16);
 }
 
 .App img {
