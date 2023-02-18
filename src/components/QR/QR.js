@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { QRCodeSVG } from "qrcode.react";
 
 export function QR({id}){
    //🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒🐒
@@ -16,8 +17,7 @@ export function QR({id}){
         .then((res) => res.json())
         .then((data) => {
           setData(data);
-          console.log(data);
-        });
+         });
 
       }, 1000);
         return () => clearInterval(interval);
@@ -25,7 +25,8 @@ export function QR({id}){
    return (
 
       <div>
-         hi
+         <QRCodeSVG value={data}
+         size={500}/>
       </div>
    );
 }
