@@ -34,6 +34,13 @@ def user():
 	
 	return jsonify(results)
 
+# turn the id to the string of the QR code
+@app.route("/getQR", methods=["GET"], strict_slashes=False)
+def getQRStringFromID():
+	content = request.json
+	screen = Screen.query.get(content["id"])
+	return screen.curString
+
 # Route for to check if QR code is valid. If it is, increment by right number of points
 @app.route("/validQR", methods=["POST"], strict_slashes=False)
 def validQR():
@@ -43,7 +50,6 @@ def validQR():
 	if content["string"] == screenData["curString"]:
 		return 1
 	return 0
-
 
 
 '''

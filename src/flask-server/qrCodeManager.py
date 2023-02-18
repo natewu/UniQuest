@@ -14,19 +14,12 @@ def get_random_string(length):
     letters = string.ascii_letters
     result_str = ''.join(random.choice(letters) for i in range(length))
     return result_str
+    
 from threading import Timer
 class RepeatTimer(Timer):
     def run(self):
         while not self.finished.wait(self.interval):
             self.function(*self.args, **self.kwargs)
-
-def repeatedTimer():
-    #
-    newCodeString = get_random_string(QRcodeLength)
-    print(newCodeString)
-    
-    pass
-    #generateNewQRCodeString
 
 class QRcodeManager():
     def __init__(self) -> None:
