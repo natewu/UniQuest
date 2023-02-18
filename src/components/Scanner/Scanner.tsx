@@ -4,7 +4,9 @@ import styles from './Scanner.module.scss'
 
 function Scanner() {
    // const [imgSrc, setImgSrc] = React.useState(null)
-   const [data, setData] = React.useState<any>(null)
+   const [data, setData] = React.useState<any>("")
+
+   console.log(data)
 
    return (
       <div className={styles.Scanner}> 
@@ -14,15 +16,18 @@ function Scanner() {
             <h1>Scanner</h1>
          <div className={styles.Webcam}>
             <QrReader 
-            
-               onResult={(result) => {
-                  setData(result)
+               scanDelay={50}
+               onResult={(result, error) => {
+                  if (!!result) {
+                     setData(result?.getText());
+                  }
+   
                }}
                
                constraints={{facingMode: "environment"}}                
             />
          </div>
-         {/* {data.text} */}
+         <h1>{data?.text}</h1>
       </div>
    )
 }
