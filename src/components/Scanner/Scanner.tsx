@@ -11,18 +11,16 @@ function Scanner() {
          <div className={styles.Close}>
             <div className={styles.Line}/>
          </div>
-         <div className={styles.Wrapper}>
             <h1>Scanner</h1>
-            <div className={styles.Webcam}>
-               <QrReader 
+         <div className={styles.Webcam}>
+            <QrReader 
+            
+               onResult={(result) => {
+                  setData(result)
+               }}
                
-                  onResult={(result) => {
-                     setData(result)
-                  }}
-                  
-                  constraints={{facingMode: "environment"}}                
-               />
-            </div>
+               constraints={{facingMode: "environment"}}                
+            />
          </div>
          {/* {data.text} */}
       </div>
