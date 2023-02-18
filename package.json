@@ -1,5 +1,5 @@
 {
-  "name": "code-the-change-project",
+  "name": "calgary-hacks",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:5000/",
@@ -17,6 +17,7 @@
     "ini": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-qr-reader": "^3.0.0-beta-1",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-webcam": "^7.0.1",

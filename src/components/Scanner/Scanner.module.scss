@@ -2,12 +2,30 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    justify-self: flex-end;
+
 }
 
 .Webcam{
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
     display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
+    margin: 2rem;
+
+    *{
+        position: relative !important;
+        padding: 0 !important;
+        border-radius: 10px;
+    }
 }
