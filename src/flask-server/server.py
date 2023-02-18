@@ -37,7 +37,6 @@ def user():
 @app.route("/getQR", methods=["GET"], strict_slashes=False)
 def getQRStringFromID():
 	content = request.args
-	print(content.get("id"))
 	screen = Screen.query.get(content.get("id"))
 	return jsonify(screen.curString)
 
