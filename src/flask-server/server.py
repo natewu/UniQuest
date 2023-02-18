@@ -1,28 +1,12 @@
 from flask import current_app,jsonify,request
 from app import create_app,db
-from models import Articles, EyeWear, Post, User,articles_schema, users_schema,user_schema, eyewears_schema, posts_schema
-from eyewearSimilarity import *
+from models import User, users_schema,user_schema, Screen, screen_schema, screens_schema
 
 # Create an application instance
 app = create_app()
 
 with app.app_context():
 	db.create_all()
-
-# Define a route to fetch the avaialable articles
-
-eye1 = EyeWearInformation(-1,-1.5,64,22,49,150)
-eye2 = EyeWearInformation(-1.5,-1.75,64,24,53,155)
-print(SimilarityOfEyewear(eye1, eye2))
-
-@app.route("/articles", methods=["GET"], strict_slashes=False)
-def articles():
-
-	articles = Articles.query.all()
-	
-	results = articles_schema.dump(articles)
-
-	return jsonify(results)
 
 @app.route("/users", methods=["GET"], strict_slashes=False)
 def users():
@@ -39,6 +23,17 @@ def user():
 	#🃏
 	results = user_schema.dump(user.__dict__)
 	
+	return jsonify(results)
+
+# Route for to check if QR code is valid. If it is, increment by right number of points
+'''
+@app.route("/articles", methods=["GET"], strict_slashes=False)
+def articles():
+
+	articles = Articles.query.all()
+	
+	results = articles_schema.dump(articles)
+
 	return jsonify(results)
 
 
@@ -77,6 +72,6 @@ def posts():
 	results = posts_schema.dump(posts)
 	print(results)
 	return (Post.query.first().description)
-
+'''
 if __name__ == "__main__":
 	app.run(debug=True)
