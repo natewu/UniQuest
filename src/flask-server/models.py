@@ -21,6 +21,7 @@ class Screen(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60))    
+    points = db.Column(db.Integer, default=0)
     # The current string represented by QR code on this screen
     curString = db.Column(db.String(60))    
 
@@ -33,7 +34,7 @@ class UsersShema(ma.Schema):
 class ScreenShema(ma.Schema):
     class Meta:
         # Fields to expose
-        fields = ("id","email", "password","curString")
+        fields = ("id","email", "password","curString", "points")
 
 
 @event.listens_for(Screen.__table__, 'after_create')
