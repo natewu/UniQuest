@@ -23,6 +23,7 @@ class Screen(db.Model):
     password = db.Column(db.String(60))    
     points = db.Column(db.Integer, default=0)
     # The current string represented by QR code on this screen
+    location = db.Column(db.String(120))
     curString = db.Column(db.String(60))    
 
 
@@ -34,12 +35,12 @@ class UsersShema(ma.Schema):
 class ScreenShema(ma.Schema):
     class Meta:
         # Fields to expose
-        fields = ("id","email", "password","curString", "points")
+        fields = ("id","email", "password","curString", "points","location")
 
 
 @event.listens_for(Screen.__table__, 'after_create')
 def create_screens(*args, **kwargs):
-    db.session.add(Screen(id=1, email="screen1@ucalgary.ca", password="screen1", curString="cLSDMfn3oA)93fS"))
+    db.session.add(Screen(id=1, email="screen1@ucalgary.ca", password="screen1", curString="cLSDMfn3oA)93fS", points = 20, location="Active Living Center"))
     db.session.commit()
 
 @event.listens_for(User.__table__, 'after_create')
