@@ -1,48 +1,48 @@
 $RADIUS: 20px;
 
 .Scanner{
-    display: flex;
-    flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    justify-self: flex-end;
-    position: absolute;
-    bottom:0;
+    background-color: white;
+    // bottom:0;
     border-top: 1px solid #00000059;
-    padding: 1.5rem 0 0 0;
     border-top-left-radius: $RADIUS;
     border-top-right-radius: $RADIUS;
-    // box shadow on top of the scanner
     box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    height: auto;
+    justify-content: center;
+    justify-self: flex-end;
+    overflow: hidden;
+    padding: 1.5rem 0 0 0;
+    position: relative;
+    position: relative;
+    width: 100%;
 }
 
 .Close{
-    padding: 1px 0;
     height: 1px;
+    padding: 1px 0;
     .Line{
         border-top: 1px solid #00000059;
     }
 }
 
 .Webcam{
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
+    align-items: center;
+    box-sizing: border-box;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    height: 100%;
     justify-content: center;
-    box-sizing: border-box;
     margin: 2rem;
+    max-width: 100%;
+    object-fit: cover;
 
     *{
-        position: relative !important;
-        padding: 0 !important;
         border-radius: 10px;
+        padding: 0 !important;
+        position: relative !important;
     }
 }

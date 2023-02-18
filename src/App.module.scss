@@ -8,8 +8,9 @@
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  min-width: 320px;
-  width: calc(100vh * 9 / 16);
+  // min-width: 320px;
+  min-width: calc(100vh * 9 / 16);
+  width: 100vw;
   position: relative;
 }
 
@@ -40,4 +41,12 @@
 
 .App a:hover {
   opacity: 0.5;
+}
+
+.Scanner{
+  position: relative;
+}
+
+.MuiPaper-root{
+  background-color: transparent;
 }
