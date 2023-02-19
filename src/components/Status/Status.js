@@ -1,29 +1,44 @@
-import React, { useState, useEffect } from "react";
+import styles from './Status.module.scss';
 
-export function Status({id}){
+export function Status(){
 
     return(
 
-//       <div>
-//       <div className="container">
-//           <ul>
-//               <h3>Today</h3>
-//               <li>Rewards     50</li>
-//               <li>Points      10</li>
-//               <li>Codes        7</li>
-//               <h3>Lifetime</h3>
-//               <li>Rewards     500</li>
-//               <li>Points      120</li>
-//               <li>Codes        42</li>  
-//           </ul>
-//       </div>
-   
-// </div>
-        <div>
-        <div className="container">Hi</div>
+    <div class={styles.main}>
+        <div className={styles.container}>
+            <ul >
+                <h3 className={styles.header}>Today</h3>
+                <li className={styles.values}>Rewards</li>
+                <li className={styles.values} >Points</li>
+                <li className={styles.values}>Codes</li>
+            </ul>
+            <ul className={styles.valuesList}>
+                <li className={styles.values}>$2</li>
+                <li className={styles.values}>100</li>
+                <li className={styles.values}>6</li>
+
+            </ul>
         </div>
+
+        <div className={styles.container}>
+            <ul>
+                <h3 className={styles.header}>Lifetime</h3>
+                <li className={styles.values}>Rewards</li>
+                <li className={styles.values}>Points</li>
+                <li className={styles.values}>Codes</li>
+            </ul>
+            <ul className={styles.valuesList}>
+                <li className={styles.values}>$20</li>
+                <li className={styles.values}>840</li>
+                <li className={styles.values}>42</li>
+            </ul>
+        </div>
+        
+   
+    </div>
 
     );
 
-    
 }
+
+export default Status;
