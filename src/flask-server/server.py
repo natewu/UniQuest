@@ -68,7 +68,7 @@ def validQR():
 				user.points += screen.points
 				user.screens.append(screen)	
 				db.session.commit()
-				return {'valid': "Good job!", "points": "20", "description":screen.description, "imageURL":screen.imageURL}
+				return {'valid': "Good job!", "points": str(screen.points), "description":screen.description, "imageURL":screen.imageURL}
 			else:
 				return {'valid': "You already scanned this :)"}
 	return {'valid': ""}
