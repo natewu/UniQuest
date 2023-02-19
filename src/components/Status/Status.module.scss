@@ -17,7 +17,7 @@
     flex-flow: column nowrap;
     font-family: sans-serif;
     height: 400px;
-    justify-content: center;
+    justify-content: space-evenly;
     // padding: 1rem;
     margin: 1rem 2rem;
     text-align: center;
@@ -86,7 +86,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    padding: 0 2rem;
+    padding: 0 1rem;
     text-align: left;
 }
 
