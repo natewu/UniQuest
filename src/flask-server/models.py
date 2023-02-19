@@ -41,6 +41,8 @@ class ScreenShema(ma.Schema):
 @event.listens_for(Screen.__table__, 'after_create')
 def create_screens(*args, **kwargs):
     db.session.add(Screen(id=1, email="screen1@ucalgary.ca", password="screen1", curString="cLSDMfn3oA)93fS", points = 20, location="Active Living Center"))
+    db.session.add(Screen(id=2, email="screen2@ucalgary.ca", password="screen2", curString="cLSDMfn3oA)93fS", points = 10, location="Administration Building"))
+    db.session.add(Screen(id=3, email="screen3@ucalgary.ca", password="screen3", curString="cLSDMfn3oA)93fS", points = 30, location="Calgary Centre for Innovative Technology"))
     db.session.commit()
 
 @event.listens_for(User.__table__, 'after_create')
