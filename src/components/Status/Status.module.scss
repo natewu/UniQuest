@@ -4,11 +4,8 @@
     justify-content: space-between;
     width: 100%;
     text-align: center;
-    align-items: center;
-    li{
-        margin: 0;
-        padding: 0;
-    }
+    justify-content: center;
+
 }
 
 .main{
@@ -34,6 +31,8 @@
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    box-sizing: border-box;
+    color: #DB2725;
 }
 
 .values{
@@ -53,7 +52,6 @@
     flex-direction: column;
     justify-content: center;
     list-style-type: none;
-
 }
 
 .valuesList{
@@ -66,52 +64,11 @@
     margin-left: 21%;
 }
 
+.person{
+    z-index: 1;
+    display: none;
+  }
 
-.egg {
-    background-color: red;
-    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60%;
-    display: block;
-    height: 270px;
-    position: absolute;
-    right: 36%;
-    rotate: 90deg;
-    top: -25%;
-    width: 189px;
-}
-
-.info{
-    align-items: flex-start;
-    // box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0;
-    padding: 0 1rem;
-    text-align: left;
-}
-
-.info2{
-    align-items: right;
-    // box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0;
-    padding: 0 1rem;
-    p{
-        text-align: right
-    };
-}
-
-.info__container{
-    align-items: center;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0 1rem;
-    text-align: left;
-    width: 100%;
+*{
+    background-image: url("./images/screenshot.svg") ;
 }

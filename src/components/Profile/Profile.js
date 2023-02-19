@@ -16,6 +16,6 @@ export function Profile({data}){
                 </div>
             </div>
         </div>
-
+        
     );
 }
