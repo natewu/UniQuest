@@ -54,8 +54,10 @@ def validQR():
 	screen = Screen.query.first()
 	screenData = screen_schema.dump(screen.__dict__)
 	content = request.form
-	print(content["string"], screenData["curString"])
 	if content["string"] == screenData["curString"]:
+		user = User.query.first()
+		user.points += screen.points
+		db.session.commit()
 		return {'valid': True}
 	return {'valid': False}
 
