@@ -22,10 +22,6 @@ export function Leaderboard(){
                   <p className={styles.description}>See who has earned the most points in campus!</p>
 
                   <div className={`${styles.scroller} ${styles.center2}`}>
-                     <Profile data={{profile: "https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg",
-                                    name: "Allan Kong",
-                                    points: "1120"}}>               
-                     </Profile>
 
                      <Profile data={{profile: "https://play-lh.googleusercontent.com/i1qvljmS0nE43vtDhNKeGYtNlujcFxq72WAsyD2htUHOac57Z9Oiew0FrpGKlEehOvo=w240-h480-rw",
                                     name: "Nate Wu",
@@ -36,6 +32,10 @@ export function Leaderboard(){
                      <Profile data={{profile: "https://media.licdn.com/dms/image/D5603AQHKzGXKEZkASg/profile-displayphoto-shrink_100_100/0/1665696865692?e=1682553600&v=beta&t=uzgCsAMjnFSWlO9OuP5BuRKQKDlCTTIhaynpcmMJAW0",
                                     name: "Lujaina Eldelebshany",
                                     points: "300"}}></Profile>
+                     <Profile data={{profile: "https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg",
+                                    name: "Allan Kong",
+                                    points: "250"}}>               
+                     </Profile>
                      <Profile data={{profile: "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/5c19fa64-10c8-4693-8cf5-03941ba996d2",
                                     name: "Kongaroo",
                                     points: "220"}}></Profile>
