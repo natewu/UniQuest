@@ -58,16 +58,17 @@ def getPointsFromID():
 # Route for to check if QR code is valid. If it is, increment by right number of points
 @app.route("/validQR", methods=["POST"], strict_slashes=False)
 def validQR():
-	screen = Screen.query.first()
-	screenData = screen_schema.dump(screen.__dict__)
+	screens = Screen.query.all()
 	content = request.form
-	if content["string"] == screenData["curString"]:
-		user = User.query.first()
-		if screen not in user.screens:
-			user.points += screen.points
-			user.screens.append(screen)
-		db.session.commit()
-		return {'valid': True}
+	for screen in screens:
+		screenData = screen_schema.dump(screen.__dict__)
+		if content["string"] == screenData["curString"]:
+			user = User.query.first()
+			if screen not in user.screens:
+				user.points += screen.points
+				user.screens.append(screen)
+			db.session.commit()
+			return {'valid': True}
 	return {'valid': False}
 
 
