@@ -7,6 +7,7 @@ function Scanner() {
    // const [imgSrc, setImgSrc] = React.useState(null)
    const [data, setData] = React.useState<any>("");
    const [res, setRes] = React.useState<any>(0);
+   const [points, setPoints] = React.useState<any>(0);
 
 
    useEffect(() => {
@@ -28,6 +29,17 @@ function Scanner() {
 
    }, [data]);
 
+   useEffect(() => {
+   
+      fetch(`/user`)
+      .then(res => res.json())
+      .then(res => {
+         console.log(res);
+         setPoints(res.points);
+      });
+
+   }, [points, data]);
+
    return (
       <div className={styles.Scanner}> 
          <div className={styles.Close}>
@@ -35,6 +47,7 @@ function Scanner() {
          </div>
             <h1>Scanner</h1>
             <h1>{res ? "Yay!" : "Nay :("}</h1>
+            <h2>{points}</h2>
          <div className={styles.Webcam}>
             <QrReader 
                // ViewFinder={(
