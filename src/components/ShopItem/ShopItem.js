@@ -2,8 +2,22 @@ import { Dialog } from "components/Dialog/Dialog";
 import styles from "./ShopItem.module.scss"
 import Popup from 'reactjs-popup';
 
+import React, { useState, useEffect } from "react";
 
 export function ShopItem({data}){
+    
+    function purchase(points) {
+        fetch(`/purchase`, {
+            method: "POST", 
+            body: `points=${points}`,
+            headers: {
+               "Content-Type": "application/x-www-form-urlencoded"
+            }
+         })
+         .then(res => res.json())
+         .then(res => {
+         });
+      }
     function makeid(length) {
         let result = '';
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -17,7 +31,7 @@ export function ShopItem({data}){
     }
     let randoCode = makeid(10);
     const PopupExample = () => (
-        <Popup trigger={<button className={styles.butt} >Redeem</button>} position="top left">
+        <Popup trigger={<button className={styles.butt} onClick={() => purchase(data.points)}>Redeem</button>} position="top left">
             {close => (
               <div className={styles.bigCard}>
                 <a className="close" onClick={close} style={{color:"black", textDecoration: "none",fontSize:"35px",margin:"15px"}}>
@@ -36,6 +50,8 @@ export function ShopItem({data}){
             )}
           </Popup>
         );
+
+
     return (
 
         <div className={styles.card}>
@@ -54,5 +70,4 @@ export function ShopItem({data}){
             </div>
         </div>
 
-    );
-}
+    )};

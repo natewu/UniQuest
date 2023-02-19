@@ -82,18 +82,29 @@ def validQR():
 			user = User.query.first()
 			if screen not in user.screens:
 				user.points += screen.points
+				user.totalPoints += screen.points
 				user.screens.append(screen)	
 				for screen2 in screens:
 					if screen2.id != screen.id and screen2 not in user.screens:
 						db.session.commit()
 						return {'valid': "Good job!", "points": str(screen.points), "description":screen.description, "imageURL":screen.imageURL}
 				
-				user.points += screen.points + 50
+				user.points += 50
+				user.totalPoints += 50
 				db.session.commit()
 				return {'valid': "Good job!", "points": str(screen.points + 50) + " for finishing this day's", "description":screen.description, "imageURL":screen.imageURL}
 			else:
 				return {'valid': "You already scanned this :)"}
 	return {'valid': ""}
+
+@app.route("/purchase", methods=["POST"], strict_slashes=False)
+def purchase():
+	user = User.query.first()
+	content = request.form
+	if user.points >= int(content["points"]):
+		user.points -= int(content["points"])
+	db.session.commit()
+	return {"points": user.points}
 
 
 '''
@@ -145,7 +156,7 @@ def posts():
 '''
 if __name__ == "__main__":
 	#start minute timer
-	timer = RepeatTimer(5, minuteUpdate)
+	timer = RepeatTimer(2, minuteUpdate)
 	#keep this code for the thread to be killed:
 	timer.daemon = True
 	timer.start()

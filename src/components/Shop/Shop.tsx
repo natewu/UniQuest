@@ -15,6 +15,7 @@ function Shop() {
     const [data, setData] = useState("0");
  
     useEffect(() => {
+      const interval = setInterval(() => {
           fetch(`/getPointsFromUser?id=1`)
          .then((res) => res.json())
          .then((data) => {
@@ -22,6 +23,8 @@ function Shop() {
            console.log(data);
           });
        
+      }, 1000);
+      return () => clearInterval(interval);
       });
 
     const options = [

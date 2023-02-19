@@ -1,22 +1,117 @@
-.QR{
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    li{
+        margin: 0;
+        padding: 0;
+    }
 }
 
-.butt {
-    background-color: #ff5757;
-    height:100%;
-    border-radius: 40px;
-    padding: 13px;
-    text-align: center;
-    text-transform: capitalize;
-    margin: 10px;
- }
- 
- .center {
-    display: flex;
-    justify-content: center;
+.main{
     align-items: center;
-  }
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: sans-serif;
+    height: 350px;
+    justify-content: space-evenly;
+    // padding: 1rem;
+    margin: 1rem 2rem;
+    text-align: center;
+    width: 70%;
+    // *{width: 90%;}
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
 
+.header {
+    align-items: normal;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.values{
+    align-items: start;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    margin-left: none;
+}
+
+.firstValuesList{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+
+}
+
+.valuesList{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    justify-content: center;
+    list-style-type: none;
+    margin-left: 21%;
+}
+
+
+.egg {
+    background-color: red;
+    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60%;
+    display: block;
+    height: 270px;
+    position: absolute;
+    right: 36%;
+    rotate: 90deg;
+    top: -25%;
+    width: 189px;
+}
+
+.info{
+    align-items: flex-start;
+    // box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.info2{
+    align-items: right;
+    // box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0 1rem;
+    p{
+        text-align: right
+    };
+}
+
+.info__container{
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 1rem;
+    text-align: left;
+    width: 100%;
+}
