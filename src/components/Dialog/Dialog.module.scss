@@ -1,34 +1,62 @@
 .Dialog{
-    display: flex;
-    z-index: 2000;
     background-color: white;
-    padding: 1.5rem 1rem;
     border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-flow: column nowrap;
     margin: 5rem 0 2rem 0;
-    // position: absolute;
-    // top: 0;
-    // left: 50%;
-    // right: 50%;
     max-width: 100%;
     min-width: 90%;
-    flex-flow: column nowrap;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 1.5rem;
+    position: absolute;
+    z-index: 2000;
 }
 
 .Dialog__content{
+    align-items: center;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0 1rem;
-    padding: 0.25rem 1rem;
+    margin: 0;
     overflow-y: auto;
-    &::-webkit-scrollbar {
-        width: 0.175rem;
+    padding: 0.25rem 0rem;
+    width: 100%;
+}
+
+.Success{
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin: 0;
+    overflow-y: auto;
+    padding: 0.25rem 0rem;
+    width: 100%;
+    .Success__image{
+        height: auto;
+        max-width: 90%;
+        object-fit: cover;
+        border-radius: 10px;
+        img{
+            border-radius: 6px;
+        }
     }
-    &::-webkit-scrollbar-thumb {
-        border-radius: 0.5rem;
-        background-color: #747474;
+    .Success__title{
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0.75rem 0.5rem 0.25rem 0.5rem;
+    }
+    .Success__subtitle{
+        width: 90%;
+        font-size: 1rem;
+        text-align: left;
+        font-weight: 500;
+        margin: 0.75rem 0.5rem 0.5rem 0.5rem;
+    }
+    .Success__text{
+        font-size: 0.825rem;
+        font-weight: 400;
+        text-align: left;
+        margin: 0.75rem 1.5rem 0.25rem 1.5rem;
     }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+
 import styles from './Daily.module.scss'
 
 // Gacha daily 🤣🤣
@@ -19,7 +20,7 @@ function Daily() {
          <h1>Check out today's quest at UCalgary</h1>
                   <div className={styles.Daily__list}>
          {
-            screens.map((screen: any) => {
+            screens.map((screen: any) =>  {
                return (
                      <DailyItem title={screen.location} description={screen.description} points={screen.points} image={screen.imageURL}/>
                      

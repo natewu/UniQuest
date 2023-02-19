@@ -34,7 +34,7 @@ function App({children}: {children: React.ReactNode}) {
             UniQuest
          </h1>
          {children}
-         <Dialog open={true} onClose={()=>toggleMessages(false)}>
+         <Dialog open={openMessages} onClose={()=>toggleMessages(false)}>
             <SuccessDialog data={data}/>
          </Dialog>
          <SwipeableDrawer className={styles.Scanner}
