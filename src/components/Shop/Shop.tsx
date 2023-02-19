@@ -36,15 +36,15 @@ function Shop() {
     ];
 
     const offers = [
-         {offer:"Free Printing for 100 Papers", points:100, catagory:"printing"},
-         {offer:"Free Dinner at the Dining Center", points:200, catagory:"food"},
-         {offer:"Free Morning Coffee", points:400, catagory:"food"},
-         {offer:"A Squash Ball", points:100, catagory:"fitness"},
-         {offer:"A Racquetball Ball", points:100, catagory:"fitness"},  
-         {offer:"Free Squash Raquet Rental", points:20, catagory:"fitness"},  
-         {offer:"Free Bouldering Lessons", points:100, catagory:"fitness"},  
-         {offer:"1 day parking", points:1000, catagory:"campus"},  
-         {offer:"1 hour scooter rental", points:800, catagory:"campus"},  
+         {offer:"Free Printing for 100 Papers", points:100, catagory:"printing", description:"Utilize the printing within the taylor institute library!"},
+         {offer:"Free Dinner at the Dining Center", points:700, catagory:"food", description:"Have some delicious food in the food services center!"},
+         {offer:"Free Morning Coffee", points:600, catagory:"food", description:"Have some great coffee in the Good Earth Coffeehouse!"},
+         {offer:"A Squash Ball", points:200, catagory:"fitness", description:"Go to Active Living Center Reception to redeem the ball!"},
+         {offer:"A Racquetball Ball", points:200, catagory:"fitness", description:"Go to Active Living Center Reception to redeem the ball!"},  
+         {offer:"Free Squash Raquet Rental", points:120, catagory:"fitness", description:"Go to Active Living Center Reception to redeem the raquet!"},  
+         {offer:"Free Bouldering Lessons", points:100, catagory:"fitness", description:"Go to Active Living Center Reception to bouldering lessons!"},  
+         {offer:"1 day parking", points:1300, catagory:"campus", description:"Go to Adminstrations Office to redeem the free parking!"},  
+         {offer:"1 hour scooter rental", points:1000, catagory:"campus", description:"Go to Adminstrations Office to redeem the free parking!"},  
       ]
 
    return (
@@ -76,7 +76,7 @@ function Shop() {
                   <h5 style={{textAlign: "center", overflowWrap:"break-word"}}>Your points: {data}</h5>
                   <div className={`${styles.scroller} ${styles.center2}`}>
                      {offers.filter(offer => (offer.catagory === value)).map(filteredOffer => (
-                        <ShopItem data ={{offer:filteredOffer.offer, points:filteredOffer.points}} />
+                        <ShopItem data ={{offer:filteredOffer.offer, points:filteredOffer.points,description:filteredOffer.description}} />
                      ))}
                   </div>
                <div style={{margin: "40px"}}/>
