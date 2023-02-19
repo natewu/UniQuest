@@ -1,19 +1,20 @@
+import { Button } from "@mui/material";
 import styles from './Dialog.module.scss'
 import { useEffect } from "react";
 
 export function Dialog({open, onClose, children}: {open: boolean, onClose: () => void, children: React.ReactNode}){
   
 
-   useEffect(() => {
-      const timeout = setTimeout(() => {
-         onClose();
-      }, 5000);
+   // useEffect(() => {
+   //    const timeout = setTimeout(() => {
+   //       onClose();
+   //    }, 5000);
 
-      return () => {
-         clearTimeout(timeout);
-      }
+   //    return () => {
+   //       clearTimeout(timeout);
+   //    }
 
-   }, [open]);
+   // }, [open]);
 
    if(!open) return null;
 
@@ -24,6 +25,7 @@ export function Dialog({open, onClose, children}: {open: boolean, onClose: () =>
                {children}
             </div>
          </div>
+         <Button onClick={() => onClose()}>Close</Button>
       </div>
    )
 }
