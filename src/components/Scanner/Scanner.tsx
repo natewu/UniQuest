@@ -43,10 +43,11 @@ function Scanner() {
    }, [points, data]);
 
    useEffect(() => {
-      if(res === true){
+      if(res === "Good job!"){
          dispatch(
             setMessages(true)
          )
+
       }
    }, [res]);
 
