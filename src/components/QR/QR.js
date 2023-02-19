@@ -62,7 +62,7 @@ export function QR(){
 
                <div style={{margin: "8x"}}/>
                <h1 style={{textAlign: "center", overflowWrap:"break-word"}}>{data1}</h1>
-               <p>Scan Below to Earn {data2} Points to Redeem!</p>
+               <p>Scan Below to Redeem {data2} Points!</p>
 
                <div style={{margin: "40px"}}/>
 
