@@ -15,19 +15,20 @@ $RADIUS: 20px;
     justify-content: center;
     justify-self: flex-end;
     overflow: hidden;
-    padding: 1.5rem 0 0 0;
+    padding: 2rem 0 0 0;
     position: relative;
     position: relative;
     width: auto;
+    
 }
 
-.Close{
-    height: 1px;
-    padding: 1px 0;
-    .Line{
-        border-top: 1px solid #00000059;
-    }
-}
+// .Close{
+//     height: 1px;
+//     padding: 1px 0;
+//     .Line{
+//         border-top: 1px solid #00000059;
+//     }
+// }
 
 .Webcam{
     align-items: center;

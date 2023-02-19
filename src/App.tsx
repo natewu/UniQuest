@@ -18,7 +18,7 @@ function App() {
 
    return (
       <div className={styles.App}>
-         <Button onClick={()=>toggleScanner(true)}>QR</Button>
+         {/* <Button onClick={()=>toggleScanner(true)}>QR</Button> */}
          <SwipeableDrawer className={styles.Scanner}
             anchor="bottom"
             open={openScanner}
