@@ -8,6 +8,7 @@ import {
 
 import App from './App.tsx';
 import { Provider } from "react-redux";
+import { Leaderboard } from "./components/Leaderboard/Leaderboard";
 import { QR } from "./components/QR/QR";
 import { Status } from "./components/Status/Status";
 import React from 'react';

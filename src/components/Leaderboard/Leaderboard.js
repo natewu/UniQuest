@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
-import styles from "./QR.module.scss"
+import styles from "./Leaderboard.module.scss"
 
 export function Leaderboard(){
    
    const [data, setData] = useState([{}]);
-
+   const [data1, setData1] = useState("Loading...");
+   const [data2, setData2] = useState("0");
+   
    let curURL = window.location.href;
    let curID = parseInt(curURL.split("/").at(-1))
 
