@@ -29,3 +29,14 @@ export function Dialog({open, onClose, children}: {open: boolean, onClose: () =>
       </div>
    )
 }
+
+export function SuccessDialog(data: any){
+   return (
+      <div className={styles.Success}>
+         <h1>Success you earned {data.points}!</h1>
+         <h2>About the location:</h2>
+         <img src={data.imageURL} alt="location" />
+         <p>{data.description}</p>
+      </div>
+   );
+}
