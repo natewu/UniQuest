@@ -27,7 +27,9 @@ function Scanner() {
             setRes(res.valid)
             dispatch(
                setDataJSON(res)
-            )
+              
+            );
+            console.log(res)
          });
       }
    }, [data]);
