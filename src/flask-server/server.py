@@ -25,6 +25,15 @@ def users():
 
 	return jsonify(results)
 
+@app.route("/screens", methods=["GET"], strict_slashes=False)
+def screens():
+
+	screens = Screen.query.all()
+	
+	results = screens_schema.dump(screens)
+
+	return jsonify(results)
+
 @app.route("/user", methods=["GET"], strict_slashes=False)
 def user():
 	user = User.query.first()

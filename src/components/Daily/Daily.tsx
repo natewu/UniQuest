@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Daily.module.scss'
 
 // Gacha daily 🤣🤣
 
 function Daily() {
+   const [screens, setScreens] = React.useState<any>([{}]);
+   useEffect(() => {
+      fetch(`/screens`)
+         .then(res => res.json())
+         .then(res => {
+            setScreens(res);
+         });
+
+   }, [screens]);
    return (
       <div className={styles.Daily}>
          {/* Daily tasks  list*/}
-         <h1>Check out what's happening today.</h1>
-         <div className={styles.Daily__list}>
-            <DailyItem title="Walk around the park!" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod." points={100} image="https://pmsigns.ca/wp-content/uploads/2021/02/1586847291-1260w__mg_8948b-1.jpg"/>
-            <DailyItem title="Sciencing at the lab." description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod." points={100} image="https://pmsigns.ca/wp-content/uploads/2021/02/1586847291-1260w__mg_8948b-1.jpg"/>
-            <DailyItem title="Bulking at the gym!" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod." points={100} image="https://pmsigns.ca/wp-content/uploads/2021/02/1586847291-1260w__mg_8948b-1.jpg"/>
-            <DailyItem title="Grinding at the library." description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod." points={100} image="https://pmsigns.ca/wp-content/uploads/2021/02/1586847291-1260w__mg_8948b-1.jpg"/>
+         <h1>Check out today's quest at UCalgary</h1>
+                  <div className={styles.Daily__list}>
+         {
+            screens.map((screen: any) => {
+               return (
+                     <DailyItem title={screen.location} description={screen.description} points={screen.points} image={screen.imageURL}/>
+                     
+               )
+            })
+         
+         }
          </div>
       </div>
    )
