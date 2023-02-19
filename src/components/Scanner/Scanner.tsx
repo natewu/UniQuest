@@ -7,7 +7,12 @@ import { useDispatch } from "react-redux";
 
 function Scanner() {
    // const [imgSrc, setImgSrc] = React.useState(null)
-   const [data, setData] = React.useState<any>("");
+   const [data, setData] = React.useState<any>({
+      valid: "",
+      points: "",
+      description: "",
+      image: "",
+   });
    const [res, setRes] = React.useState<any>(0);
    const [points, setPoints] = React.useState<any>(0);
    const dispatch = useDispatch();
@@ -24,7 +29,7 @@ function Scanner() {
          .then(res => res.json())
          .then(res => {
             console.log(res);
-            setRes(res.valid)
+            setRes(res)
             
          });
       }
@@ -46,7 +51,9 @@ function Scanner() {
    useEffect(() => {
       if(res === "Good job!"){
          dispatch(
-            setMessages(true),
+            setMessages(true)
+         );
+         dispatch(
             setDataJSON(res)
          );
       }
