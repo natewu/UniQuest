@@ -40,12 +40,19 @@ def getQRStringFromID():
 	screen = Screen.query.get(content.get("id"))
 	return jsonify(screen.curString)
 
-# turn the id to the string of the QR code
+# turn the id to the name of the QR code
 @app.route("/getName", methods=["GET"], strict_slashes=False)
 def getLocationNameFromID():
 	content = request.args
 	screen = Screen.query.get(content.get("id"))
 	return jsonify(screen.location)
+
+# turn the id to the points of the QR code
+@app.route("/getPoints", methods=["GET"], strict_slashes=False)
+def getPointsFromID():
+	content = request.args
+	screen = Screen.query.get(content.get("id"))
+	return jsonify(screen.points)
 
 
 # Route for to check if QR code is valid. If it is, increment by right number of points
