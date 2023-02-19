@@ -1,0 +1,21 @@
+.QR{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+.butt {
+    background-color: #ff5757;
+    height:100%;
+    border-radius: 40px;
+    padding: 13px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 10px;
+ }
+
+ .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
