@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.main{
+    justify-content: center;
+    align-items: center;
+margin-left: 16%;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.header {
+    margin-left: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.valuesList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 21%;
+    justify-content: center;
+    list-style-type: none;
+    box-sizing: border-box;
+}

@@ -1,19 +1,24 @@
 import React, { useEffect } from 'react'
+import { setDataJSON, setMessages } from "redux/reducers/drawerSlice";
 
 import { QrReader } from "react-qr-reader"
-import { setMessages } from "redux/reducers/drawerSlice";
 import styles from './Scanner.module.scss'
 import { useDispatch } from "react-redux";
 
 function Scanner() {
    // const [imgSrc, setImgSrc] = React.useState(null)
-   const [data, setData] = React.useState<any>("");
+   const [data, setData] = React.useState<any>({
+      valid: "",
+      points: "",
+      description: "",
+      image: "",
+   });
    const [res, setRes] = React.useState<any>(0);
    const [points, setPoints] = React.useState<any>(0);
    const dispatch = useDispatch();
 
    useEffect(() => {
-      if(data !== ""){
+      if(data.valid !== ""){
          fetch(`/validQR`, {
             method: "POST", 
             body: `string=${data}`,
@@ -24,7 +29,8 @@ function Scanner() {
          .then(res => res.json())
          .then(res => {
             console.log(res);
-            setRes(res.valid)
+            setRes(res)
+            
          });
       }
    }, [data]);
@@ -43,10 +49,13 @@ function Scanner() {
    }, [points, data]);
 
    useEffect(() => {
-      if(res === true){
+      if(res === "Good job!"){
          dispatch(
             setMessages(true)
-         )
+         );
+         dispatch(
+            setDataJSON(res)
+         );
       }
    }, [res]);
 
@@ -56,7 +65,7 @@ function Scanner() {
             <div className={styles.Line}/>
          </div>
             <h1>Scanner</h1>
-            <h1>{res ? res : ""}</h1>
+            {/* <h1>{res ? res : ""}</h1> */}
             <h2>You have {points} points</h2>
          <div className={styles.Webcam}>
             <QrReader 

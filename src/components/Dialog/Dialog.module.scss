@@ -2,13 +2,15 @@
     display: flex;
     z-index: 2000;
     background-color: white;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     border-radius: 10px;
     margin: 5rem 0 2rem 0;
     // position: absolute;
     // top: 0;
     // left: 50%;
     // right: 50%;
-    max-width: 50%;
-    min-width: 100px;
+    max-width: 100%;
+    min-width: 90%;
+    flex-flow: column nowrap;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }

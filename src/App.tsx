@@ -1,7 +1,7 @@
-import { selectMessages, selectScanner, setMessages, setScanner } from "redux/reducers/drawerSlice";
+import { Dialog, SuccessDialog } from "components/Dialog/Dialog";
+import { selectData, selectMessages, selectScanner, setMessages, setScanner } from "redux/reducers/drawerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Dialog } from "components/Dialog/Dialog";
 import Nav from "components/Nav/Nav";
 import React from "react";
 import Scanner from "./components/Scanner/Scanner";
@@ -13,6 +13,7 @@ function App() {
 
    const openScanner = useSelector(selectScanner);
    const openMessages = useSelector(selectMessages);
+   const data = useSelector(selectData);
    const dispatch = useDispatch();
    
    function toggleScanner(boolean: boolean) {
@@ -21,12 +22,13 @@ function App() {
 
    function toggleMessages(boolean: boolean) {
       dispatch(setMessages(boolean));
+      toggleScanner(false);
    }
 
    return (
       <div className={styles.App}>
-         <Dialog open={openMessages} onClose={()=>toggleMessages(false)}>
-            it worked??
+         <Dialog open={true} onClose={()=>toggleMessages(false)}>
+            <SuccessDialog data={data}/>
          </Dialog>
          <SwipeableDrawer className={styles.Scanner}
             anchor="bottom"

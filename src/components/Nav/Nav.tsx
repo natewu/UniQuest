@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AddIcon from '@mui/icons-material/Add';
+import HomeIcon from '@mui/icons-material/Home';
 import { IconButton } from "@mui/material";
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import React from 'react'
@@ -10,6 +11,7 @@ import styles from './Nav.module.scss'
 
 function Nav() {
    const dispatch = useDispatch();
+   // const history = useHistory();
 
    function toggleScanner(toggle: boolean) {
       dispatch(
@@ -22,6 +24,10 @@ function Nav() {
    return (
       <div className={styles.Nav}>
          <div className={styles.Buttons}>
+            <Button 
+               Icon={HomeIcon}
+               toggle={()=>toggleScanner(true)}
+            />
             <Button 
                Icon={LocalAtmIcon}
                toggle={()=>toggleScanner(true)}

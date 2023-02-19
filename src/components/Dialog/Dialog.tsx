@@ -1,19 +1,20 @@
+import { Button } from "@mui/material";
 import styles from './Dialog.module.scss'
 import { useEffect } from "react";
 
 export function Dialog({open, onClose, children}: {open: boolean, onClose: () => void, children: React.ReactNode}){
   
 
-   useEffect(() => {
-      const timeout = setTimeout(() => {
-         onClose();
-      }, 5000);
+   // useEffect(() => {
+   //    const timeout = setTimeout(() => {
+   //       onClose();
+   //    }, 5000);
 
-      return () => {
-         clearTimeout(timeout);
-      }
+   //    return () => {
+   //       clearTimeout(timeout);
+   //    }
 
-   }, [open]);
+   // }, [open]);
 
    if(!open) return null;
 
@@ -24,6 +25,18 @@ export function Dialog({open, onClose, children}: {open: boolean, onClose: () =>
                {children}
             </div>
          </div>
+         <Button onClick={() => onClose()}>Close</Button>
       </div>
    )
+}
+
+export function SuccessDialog(data: any){
+   return (
+      <div className={styles.Success}>
+         <h1>Success you earned {data.points}!</h1>
+         <h2>About the location:</h2>
+         <img src={data.imageURL} alt="location" />
+         <p>{data.description}</p>
+      </div>
+   );
 }
