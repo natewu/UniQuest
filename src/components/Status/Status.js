@@ -16,10 +16,13 @@ export function Status(){
             
             <Profile data={{points:20, name:"kongaroo", profile:"https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg"}}/>
 
+            <div className={styles.egg}></div>
             <div class={styles.main}>
+
+            <h3 className={styles.header}>Today</h3>
+
                 <div className={styles.container}>
-                    <ul >
-                        <h3 className={styles.header}>Today</h3>
+                    <ul className={styles.firstValuesList} >
                         <li className={styles.values}>Rewards</li>
                         <li className={styles.values} >Points</li>
                         <li className={styles.values}>Codes</li>
@@ -32,9 +35,12 @@ export function Status(){
                     </ul>
                 </div>
 
+                <h3 className={styles.header}>Lifetime</h3>
+
+
                 <div className={styles.container}>
-                    <ul>
-                        <h3 className={styles.header}>Lifetime</h3>
+                    <ul className={styles.firstValuesList}>
+                        {/* <h3 className={styles.header}>Lifetime</h3> */}
                         <li className={styles.values}>Rewards</li>
                         <li className={styles.values}>Points</li>
                         <li className={styles.values}>Codes</li>

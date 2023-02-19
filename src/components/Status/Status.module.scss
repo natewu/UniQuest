@@ -1,25 +1,64 @@
-.QR{
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
 }
 
-.butt {
-    background-color: #ff5757;
-    height:100%;
-    border-radius: 40px;
-    padding: 13px;
-    text-align: center;
-    text-transform: capitalize;
-    margin: 10px;
- }
- 
- .center {
-    display: flex;
+.main{
     justify-content: center;
     align-items: center;
-  }
-
-li{
-    margin: 0;
+    width: 100%;
+    font-family: sans-serif;
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    margin: -10% 0;
+    margin-left: none;
+    align-items: start;
+    justify-content: center;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.firstValuesList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+
+}
+
+.valuesList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 21%;
+    justify-content: center;
+    list-style-type: none;
+    font-weight: bolder;
+}
+
+
+.egg {
+    display: block;
+    position: absolute;
+    top: -25%;
+    right: 36%;
+    width: 189px;
+    height: 270px;
+    background-color: red;
+    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60%;
+    rotate: 90deg;
+  }
