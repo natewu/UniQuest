@@ -2,16 +2,90 @@
     display: flex;
     flex-flow: column nowrap;
     height: 85vh;
-    padding: 0 0 2rem 0;
     width: 100%;
     h1{
         font-size: 1.25rem;
-        padding: 1rem 0;
     }
 }
-
+.center2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 .main {
     height: 100vh;
     width: 100vw;
     background-color: white;
 }
+
+.scroller {
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.175rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0.5rem;
+        background-color: #747474;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.description{
+    font-size: .75rem;
+    margin: .25rem auto;
+    width: 70%;
+    text-align: center;
+}
+
+  .box select {
+    background-color: #ffffff;
+    color: rgb(68, 68, 68);
+    padding: 12px;
+    width: 250px;
+    height: auto;
+    font-size: 20px;
+    -webkit-appearance: button;
+    appearance: button;
+    border-width: 2px;
+    border-radius: 10px;
+  }
+  
+  .box::before {
+    font-family: FontAwesome;
+    height: 80%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .box select option {
+    padding: 30px;
+  }
