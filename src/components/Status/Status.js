@@ -6,19 +6,23 @@ export function Status(){
     return(
     <div className={styles.QR}>
         <div style={{ 
-            margin: "0",
+            margin: "0 auto",
             position: "absolute",
             top: "50%",
             left: "50%",
             width: "100%",
             transform: "translate(-50%, -50%)",
+            display:"flex",
+            alignItems:"center",
+            flexDirection:"column",
+            justifyContent:"center",
             }}>
             
             <Profile data={{points:20, name:"kongaroo", profile:"https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg"}}/>
 
             {/* <div className={styles.egg}></div> */}
             <div class={styles.main}>
-                <div>
+                <div className={styles.info__container}>
                     <h3 className={styles.header}>Today</h3>
 
                     <div className={styles.container}>
@@ -37,7 +41,7 @@ export function Status(){
                 </div>
                 
 
-                <div>
+                <div className={styles.info__container}>
                     <h3 className={styles.header}>Lifetime</h3>
 
 

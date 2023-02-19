@@ -1,9 +1,10 @@
 .container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     text-align: center;
-    justify-content: center;
-
+    align-items: center;
     li{
         margin: 0;
         padding: 0;
@@ -11,95 +12,103 @@
 }
 
 .main{
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    font-family: sans-serif;
     display: flex;
     flex-flow: column nowrap;
-    text-align: center;
-    align-items: center;
+    font-family: sans-serif;
     height: 400px;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
     // *{width: 90%;}
+    max-width: 500px;
 }
 
 .header {
+    align-items: normal;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: normal;
     list-style-type: none;
-    box-sizing: border-box;
 }
 
 .values{
+    align-items: start;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    margin-left: none;
-    align-items: start;
     justify-content: center;
     list-style-type: none;
-    box-sizing: border-box;
+    margin: 0;
+    margin-left: none;
 }
 
 .firstValuesList{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     list-style-type: none;
 
 }
 
 .valuesList{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 21%;
+    font-weight: bolder;
     justify-content: center;
     list-style-type: none;
-    font-weight: bolder;
+    margin-left: 21%;
 }
 
 
 .egg {
-    display: block;
-    position: absolute;
-    top: -25%;
-    right: 36%;
-    width: 189px;
-    height: 270px;
     background-color: red;
     border-radius: 50% 50% 50% 50% / 40% 60% 40% 60%;
+    display: block;
+    height: 270px;
+    position: absolute;
+    right: 36%;
     rotate: 90deg;
-  }
+    top: -25%;
+    width: 189px;
+}
 
-  .info{
+.info{
+    align-items: flex-start;
+    // box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    list-style-type: none;
-    box-sizing: border-box;
     margin: 0;
-    padding: 0 1rem;
+    padding: 0 2rem;
     text-align: left;
-  
-    // font-weight: bolder;
-    // font-size: 1.5rem;
-  }
+}
 
-  .info2{
+.info2{
+    align-items: right;
+    // box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: right;
     justify-content: center;
-    list-style-type: none;
-    box-sizing: border-box;
     margin: 0;
     padding: 0 1rem;
     p{
         text-align: right
     };
-  }
+}
+
+.info__container{
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 1rem;
+    text-align: left;
+    width: 100%;
+}
