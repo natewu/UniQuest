@@ -31,6 +31,7 @@ function Shop() {
       { label: 'Foods', value: 'food' },
    
       { label: 'Printing', value: 'printing' },
+      { label: 'Campus', value: 'campus' },
    
     ];
 
@@ -42,6 +43,8 @@ function Shop() {
          {offer:"A Racquetball Ball", points:100, catagory:"fitness"},  
          {offer:"Free Squash Raquet Rental", points:20, catagory:"fitness"},  
          {offer:"Free Bouldering Lessons", points:100, catagory:"fitness"},  
+         {offer:"1 day parking", points:1000, catagory:"campus"},  
+         {offer:"1 hour scooter rental", points:800, catagory:"campus"},  
       ]
 
    return (
@@ -70,9 +73,13 @@ function Shop() {
                   </div>  
                   
                   <div style={{marginTop: "5px"}}/>
+<<<<<<< HEAD
                   <h5 style={{textAlign: "center", overflowWrap:"break-word"}}>Your points: {data}</h5>
+=======
+                  <h5 style={{textAlign: "center", overflowWrap:"break-word", marginTop:"1rem"}}>Your points: 200</h5>
+>>>>>>> 51acc7b08aaca352bad0e779ce2439dbfd829e50
                   <div className={`${styles.scroller} ${styles.center2}`}>
-                     {offers.filter(offer => (offer.catagory == value)).map(filteredOffer => (
+                     {offers.filter(offer => (offer.catagory === value)).map(filteredOffer => (
                         <ShopItem data ={{offer:filteredOffer.offer, points:filteredOffer.points}} />
                      ))}
                   </div>
