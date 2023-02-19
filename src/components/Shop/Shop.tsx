@@ -73,11 +73,7 @@ function Shop() {
                   </div>  
                   
                   <div style={{marginTop: "5px"}}/>
-<<<<<<< HEAD
                   <h5 style={{textAlign: "center", overflowWrap:"break-word"}}>Your points: {data}</h5>
-=======
-                  <h5 style={{textAlign: "center", overflowWrap:"break-word", marginTop:"1rem"}}>Your points: 200</h5>
->>>>>>> 51acc7b08aaca352bad0e779ce2439dbfd829e50
                   <div className={`${styles.scroller} ${styles.center2}`}>
                      {offers.filter(offer => (offer.catagory === value)).map(filteredOffer => (
                         <ShopItem data ={{offer:filteredOffer.offer, points:filteredOffer.points}} />
