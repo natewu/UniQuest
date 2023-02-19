@@ -1,8 +1,7 @@
-import React from 'react'
 import styles from "./Shop.module.scss"
 import { ShopItem } from "../ShopItem/ShopItem";
 import { off } from 'process';
-
+import React, { useState, useEffect } from "react";
 
 function Shop() {
 
@@ -11,6 +10,19 @@ function Shop() {
    const handleChange = (event : any) => {
       setValue(event.target.value);
     };
+
+
+    const [data, setData] = useState("0");
+ 
+    useEffect(() => {
+          fetch(`/getPointsFromUser?id=1`)
+         .then((res) => res.json())
+         .then((data) => {
+           setData(data);
+           console.log(data);
+          });
+       
+      });
 
     const options = [
 
@@ -58,7 +70,7 @@ function Shop() {
                   </div>  
                   
                   <div style={{marginTop: "5px"}}/>
-                  <h5 style={{textAlign: "center", overflowWrap:"break-word"}}>Your points: 200</h5>
+                  <h5 style={{textAlign: "center", overflowWrap:"break-word"}}>Your points: {data}</h5>
                   <div className={`${styles.scroller} ${styles.center2}`}>
                      {offers.filter(offer => (offer.catagory == value)).map(filteredOffer => (
                         <ShopItem data ={{offer:filteredOffer.offer, points:filteredOffer.points}} />
