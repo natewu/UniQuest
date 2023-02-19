@@ -8,7 +8,8 @@ import {
 
 import App from './App.tsx';
 import { Provider } from "react-redux";
-import { QR } from "components/QR/QR";
+import { QR } from "./components/QR/QR";
+import { Status } from "./components/Status/Status";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/qr/:id",
     element: <QR/>,
+  }, 
+  {
+    path: "/status",
+    element: <Status/>,
   }
 ]);
 
