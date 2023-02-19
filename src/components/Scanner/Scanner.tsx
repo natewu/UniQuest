@@ -10,8 +10,8 @@ function Scanner() {
    const [points, setPoints] = React.useState<any>(0);
 
 
+
    useEffect(() => {
-   
       if(data !== ""){
          fetch(`/validQR`, {
             method: "POST", 

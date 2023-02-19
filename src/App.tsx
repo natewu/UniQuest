@@ -1,10 +1,11 @@
-import { Button, SwipeableDrawer } from "@mui/material";
 import { selectScanner, setScanner } from "redux/reducers/drawerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+import { Dialog } from "components/Dialog/Dialog";
 import Nav from "components/Nav/Nav";
 import React from "react";
 import Scanner from "./components/Scanner/Scanner";
+import { SwipeableDrawer } from "@mui/material";
 import styles from './App.module.scss';
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
 
    return (
       <div className={styles.App}>
-         {/* <Button onClick={()=>toggleScanner(true)}>QR</Button> */}
+         <Dialog open={openScanner} onClose={()=>toggleScanner(false)}>
+            it worked??
+         </Dialog>
          <SwipeableDrawer className={styles.Scanner}
             anchor="bottom"
             open={openScanner}
