@@ -28,7 +28,7 @@ function App() {
    return (
       <div className={styles.App}>
          <Dialog open={true} onClose={()=>toggleMessages(false)}>
-            <SuccessDialog data={data}/>
+            <SuccessDialog data={...data}/>
          </Dialog>
          <SwipeableDrawer className={styles.Scanner}
             anchor="bottom"
