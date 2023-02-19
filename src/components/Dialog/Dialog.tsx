@@ -30,7 +30,7 @@ export function Dialog({open, onClose, children}: {open: boolean, onClose: () =>
    )
 }
 
-export function SuccessDialog(data: any){
+export function SuccessDialog({data}: any){
    return (
       <div className={styles.Success}>
          <h1>Success you earned {data.points}!</h1>
