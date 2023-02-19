@@ -28,7 +28,6 @@ function Scanner() {
          })
          .then(res => res.json())
          .then(res => {
-            console.log(res);
             setRes(res)
             
          });
@@ -41,7 +40,6 @@ function Scanner() {
          fetch(`/user`)
          .then(res => res.json())
          .then(res => {
-            console.log(res);
             setPoints(res.points);
          });
       }, 1000);
@@ -49,7 +47,7 @@ function Scanner() {
    }, [points, data]);
 
    useEffect(() => {
-      if(res === "Good job!"){
+      if(res.valid === "Good job!"){
          dispatch(
             setMessages(true)
          );
