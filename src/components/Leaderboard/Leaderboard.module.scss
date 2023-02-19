@@ -19,3 +19,15 @@
     align-items: center;
   }
 
+  .center2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .scroller {
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }
