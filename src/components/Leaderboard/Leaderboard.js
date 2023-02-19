@@ -1,44 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import styles from "./Leaderboard.module.scss"
+import { Profile } from "../Profile/Profile";
 
 export function Leaderboard(){
-   
-   const [data, setData] = useState([{}]);
-   const [data1, setData1] = useState("Loading...");
-   const [data2, setData2] = useState("0");
-   
-   let curURL = window.location.href;
-   let curID = parseInt(curURL.split("/").at(-1))
-
-   useEffect(() => {
-      const interval = setInterval(() => {
-         fetch(`/getQR?id=${curID}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-         });
-
-         fetch(`/getName?id=${curID}`)
-        .then((res) => res.json())
-        .then((data1) => {
-         console.log(data1);
-         setData1(data1);
-         });
-
-         fetch(`/getPoints?id=${curID}`)
-         .then((res) => res.json())
-         .then((data2) => {
-          console.log(data2);
-          setData2(data2);
-          });
-
-      }, 1000);
-        return () => clearInterval(interval);
-    }, []);
    return (
-      
-
       <div className={styles.QR}>
          <div style={{ 
             margin: "0",
@@ -53,19 +19,26 @@ export function Leaderboard(){
                <img style={{height:"150px"}} src="../images/logo.png"></img>
 
                <div style={{margin: "8x"}}/>
-               <h1 style={{textAlign: "center", overflowWrap:"break-word"}}>{data1}</h1>
-               <p>Scan Below to Earn {data2} Points to Redeem!</p>
+               <h1 style={{textAlign: "center", overflowWrap:"break-word"}}>Leaderboard</h1>
+               <p>See who has earned the most points in campus!</p>
 
-               <div style={{margin: "40px"}}/>
+               <div className={`${styles.scroller} ${styles.center2}`}>
+                  <Profile data={{profile: "https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg",
+                                 name: "Allan Kong",
+                                 points: "1120"}}>               
+                  </Profile>
 
-               <QRCodeSVG value={data}
-               size={250}
-               style={{textAlign: "center"}}/>
-
-               <div style={{margin: "30px"}}/>
-               <div className = {styles.center}>
-                  <p className={styles.butt} style={{color:"black"}}>Get UniQuest on the App Store!</p>
+                  <Profile data={{profile: "https://play-lh.googleusercontent.com/i1qvljmS0nE43vtDhNKeGYtNlujcFxq72WAsyD2htUHOac57Z9Oiew0FrpGKlEehOvo=w240-h480-rw",
+                                 name: "Nate Wu",
+                                 points: "1000"}}></Profile>
+                  <Profile data={{profile: "https://media.licdn.com/dms/image/C5603AQGgtP3DJlsO0w/profile-displayphoto-shrink_100_100/0/1644706177708?e=1682553600&v=beta&t=Mtn9hkDnhKZm5suvwIoUFkP8XNWPA04kd7SXdrO3Qzw",
+                                 name: "Ana DuCristea",
+                                 points: "550"}}></Profile>
+                  <Profile data={{profile: "https://media.licdn.com/dms/image/D5603AQHKzGXKEZkASg/profile-displayphoto-shrink_100_100/0/1665696865692?e=1682553600&v=beta&t=uzgCsAMjnFSWlO9OuP5BuRKQKDlCTTIhaynpcmMJAW0",
+                                 name: "Lujaina Eldelebshany",
+                                 points: "300"}}></Profile>
                </div>
+               <div style={{margin: "40px"}}/>
             </div>
          </div>
       </div>

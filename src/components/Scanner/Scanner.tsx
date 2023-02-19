@@ -28,7 +28,6 @@ function Scanner() {
          })
          .then(res => res.json())
          .then(res => {
-            console.log(res);
             setRes(res)
             
          });
@@ -41,7 +40,6 @@ function Scanner() {
          fetch(`/user`)
          .then(res => res.json())
          .then(res => {
-            console.log(res);
             setPoints(res.points);
          });
       }, 1000);

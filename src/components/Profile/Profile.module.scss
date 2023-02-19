@@ -1,0 +1,71 @@
+.QR{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+.butt {
+    background-color: #ff5757;
+    height:100%;
+    border-radius: 40px;
+    padding: 13px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 10px;
+ }
+
+ .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    margin:15px;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 250px;
+    height: 80px;
+    border-width: 6px;
+
+    padding: 10px;
+
+    border: solid;
+
+    outline: solid;
+    border-radius: 40px;
+
+    /* color | style */
+    outline: #f66 dashed;
+    
+    /* style | width */
+    outline: inset thick;
+    
+    /* color | style | width */
+    outline: green solid 3px;
+    
+    /* Global values */
+    outline: inherit;
+    outline: initial;
+    outline: revert;
+    outline: revert-layer;
+    outline: unset;
+    
+}
+
+.cardBody {
+    column-count: 2;
+}
+
+.profile {
+    margin-top: -7px;
+    width: 70px;
+    height: auto;
+    border-radius: 140px;
+    
+
+    object-fit:cover;
+
+}

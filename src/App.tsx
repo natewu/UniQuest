@@ -24,7 +24,7 @@ function App() {
       dispatch(setMessages(boolean));
       toggleScanner(false);
    }
-
+   console.log(data);
    return (
       <div className={styles.App}>
          <Dialog open={openMessages} onClose={()=>toggleMessages(false)}>
