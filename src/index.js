@@ -38,7 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile",
-    element: <App><Profile data={{points:20, name:"kongaroo", profile:"https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg"}}/></App>,
+    element: <App><Status></Status></App>,
   },
   {
     path: "/qr/:id",
