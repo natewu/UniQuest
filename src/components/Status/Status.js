@@ -19,7 +19,7 @@ export function Status(){
             }}>
             
             <Profile className={styles.person} data={{points:20, name:"kongaroo", profile:"https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg"}}/>
-            <img style={{height:"150px"}} src="../images/logo.png"></img>
+            {/* <img style={{height:"150px"}} src="../images/logo.png"></img> */}
 
 
             {/* <div className={styles.egg}></div> */}
