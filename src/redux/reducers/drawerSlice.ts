@@ -10,6 +10,13 @@ export const drawerSlice = createSlice({
       profile: false,
       store: false,
       message: false,
+      data: {
+         valid: "",
+         points: "",
+         description: "",
+         image: "",
+
+      }
    },
    reducers: {
       // Sets the context menu to active and sets the position
@@ -18,13 +25,17 @@ export const drawerSlice = createSlice({
       },
       setMessages: (state, action) => {
          state.message = action.payload;
+      },
+      setDataJSON(state, action) {
+         state.data = action.payload;
       }
    }
 });
 
-export const { setScanner, setMessages } = drawerSlice.actions;
+export const { setScanner, setMessages, setDataJSON } = drawerSlice.actions;
 
 export const selectScanner = (state: RootState) => state.drawer.scanner;
 export const selectMessages = (state: RootState) => state.drawer.message;
+export const selectData = (state: RootState) => state.drawer.data;
 
 export default drawerSlice.reducer;

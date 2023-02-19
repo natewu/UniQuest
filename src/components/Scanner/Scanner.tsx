@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
+import { setDataJSON, setMessages } from "redux/reducers/drawerSlice";
 
 import { QrReader } from "react-qr-reader"
-import { setMessages } from "redux/reducers/drawerSlice";
 import styles from './Scanner.module.scss'
 import { useDispatch } from "react-redux";
 
@@ -25,6 +25,9 @@ function Scanner() {
          .then(res => {
             console.log(res);
             setRes(res.valid)
+            dispatch(
+               setDataJSON(res)
+            )
          });
       }
    }, [data]);
