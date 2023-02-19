@@ -28,6 +28,7 @@ function App() {
             onClose={()=>toggleScanner(false)}
             onOpen={()=>toggleScanner(true)}
          >
+            
             <Scanner/>
          </SwipeableDrawer>
          <Nav/>

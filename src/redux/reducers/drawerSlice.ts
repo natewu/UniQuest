@@ -9,16 +9,20 @@ export const drawerSlice = createSlice({
       settings: false,
       profile: false,
       store: false,
+      message: false,
    },
    reducers: {
       // Sets the context menu to active and sets the position
       setScanner: (state, action) => {
          state.scanner = action.payload;
       },
+      setMessages: (state, action) => {
+         state.message = action.payload;
+      }
    }
 });
 
-export const { setScanner } = drawerSlice.actions;
+export const { setScanner, setMessages } = drawerSlice.actions;
 
 export const selectScanner = (state: RootState) => state.drawer.scanner;
 
