@@ -1,14 +1,19 @@
 import { Button, SwipeableDrawer } from "@mui/material";
+import { selectScanner, setScanner } from "redux/reducers/drawerSlice";
+import { useDispatch, useSelector } from "react-redux";
 
+import Nav from "components/Nav/Nav";
 import React from "react";
 import Scanner from "./components/Scanner/Scanner";
 import styles from './App.module.scss';
 
 function App() {
-   const [scanner, setScanner] = React.useState(false)
-
+   // const [scanner, setScanner] = React.useState(false)
+   const openScanner = useSelector(selectScanner);
+   const dispatch = useDispatch();
+   
    function toggleScanner(boolean: boolean) {
-      setScanner(boolean)
+      dispatch(setScanner(boolean));
    }
 
    return (
@@ -16,12 +21,13 @@ function App() {
          <Button onClick={()=>toggleScanner(true)}>QR</Button>
          <SwipeableDrawer className={styles.Scanner}
             anchor="bottom"
-            open={scanner}
+            open={openScanner}
             onClose={()=>toggleScanner(false)}
             onOpen={()=>toggleScanner(true)}
          >
             <Scanner/>
          </SwipeableDrawer>
+         <Nav/>
       </div>
    );
 }
