@@ -60,10 +60,11 @@ def getPointsFromID():
 def validQR():
 	screen = Screen.query.first()
 	screenData = screen_schema.dump(screen.__dict__)
-	content = request.json
+	content = request.form
+	print(content["string"], screenData["curString"])
 	if content["string"] == screenData["curString"]:
-		return 1
-	return 0
+		return {'valid': True}
+	return {'valid': False}
 
 
 '''
