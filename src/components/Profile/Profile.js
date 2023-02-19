@@ -7,7 +7,7 @@ export function Profile({data}){
         <div className={styles.card}>
             <div className={styles.cardBody}>
                 <div>
-                <img className={styles.profile} src={data.profile}></img>
+                <img className={styles.profile} src={data.profile} alt="pic"></img>
                 </div>
                 <div>
                     <h6 className="card-title">{data.name}</h6>

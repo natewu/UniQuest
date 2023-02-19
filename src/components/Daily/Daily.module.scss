@@ -1,0 +1,13 @@
+.Daily{
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: auto;
+    height: 90vh;
+}
+
+.Daily__list{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
