@@ -63,7 +63,9 @@ def validQR():
 	content = request.form
 	if content["string"] == screenData["curString"]:
 		user = User.query.first()
-		user.points += screen.points
+		if screen not in user.screens:
+			user.points += screen.points
+			user.screens.append(screen)
 		db.session.commit()
 		return {'valid': True}
 	return {'valid': False}
