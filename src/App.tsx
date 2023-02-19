@@ -1,4 +1,4 @@
-import { selectScanner, setScanner } from "redux/reducers/drawerSlice";
+import { selectMessages, selectScanner, setMessages, setScanner } from "redux/reducers/drawerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Dialog } from "components/Dialog/Dialog";
@@ -10,16 +10,22 @@ import styles from './App.module.scss';
 
 function App() {
    // const [scanner, setScanner] = React.useState(false)
+
    const openScanner = useSelector(selectScanner);
+   const openMessages = useSelector(selectMessages);
    const dispatch = useDispatch();
    
    function toggleScanner(boolean: boolean) {
       dispatch(setScanner(boolean));
    }
 
+   function toggleMessages(boolean: boolean) {
+      dispatch(setMessages(boolean));
+   }
+
    return (
       <div className={styles.App}>
-         <Dialog open={openScanner} onClose={()=>toggleScanner(false)}>
+         <Dialog open={openMessages} onClose={()=>toggleMessages(false)}>
             it worked??
          </Dialog>
          <SwipeableDrawer className={styles.Scanner}

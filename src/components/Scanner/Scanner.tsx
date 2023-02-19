@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react'
 
 import { QrReader } from "react-qr-reader"
+import { setMessages } from "redux/reducers/drawerSlice";
 import styles from './Scanner.module.scss'
+import { useDispatch } from "react-redux";
 
 function Scanner() {
    // const [imgSrc, setImgSrc] = React.useState(null)
    const [data, setData] = React.useState<any>("");
    const [res, setRes] = React.useState<any>(0);
    const [points, setPoints] = React.useState<any>(0);
-
-
+   const dispatch = useDispatch();
 
    useEffect(() => {
       if(data !== ""){
@@ -26,21 +27,28 @@ function Scanner() {
             setRes(res.valid)
          });
       }
-
    }, [data]);
 
    useEffect(() => {
       
       const interval = setInterval(() => {
-      fetch(`/user`)
-      .then(res => res.json())
-      .then(res => {
-         console.log(res);
-         setPoints(res.points);
-      });
-   }, 1000);
+         fetch(`/user`)
+         .then(res => res.json())
+         .then(res => {
+            console.log(res);
+            setPoints(res.points);
+         });
+      }, 1000);
 
    }, [points, data]);
+
+   useEffect(() => {
+      if(res === true){
+         dispatch(
+            setMessages(true)
+         )
+      }
+   }, [res]);
 
    return (
       <div className={styles.Scanner}> 

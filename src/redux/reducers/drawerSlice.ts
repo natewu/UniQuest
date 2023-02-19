@@ -25,5 +25,6 @@ export const drawerSlice = createSlice({
 export const { setScanner, setMessages } = drawerSlice.actions;
 
 export const selectScanner = (state: RootState) => state.drawer.scanner;
+export const selectMessages = (state: RootState) => state.drawer.message;
 
 export default drawerSlice.reducer;
