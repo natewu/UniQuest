@@ -30,13 +30,15 @@ function Scanner() {
    }, [data]);
 
    useEffect(() => {
-   
+      
+      const interval = setInterval(() => {
       fetch(`/user`)
       .then(res => res.json())
       .then(res => {
          console.log(res);
          setPoints(res.points);
       });
+   }, 1000);
 
    }, [points, data]);
 
