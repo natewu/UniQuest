@@ -14,3 +14,21 @@
     flex-flow: column nowrap;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }
+
+.Dialog__content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 1rem;
+    padding: 0.25rem 1rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 0.175rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0.5rem;
+        background-color: #747474;
+    }
+}

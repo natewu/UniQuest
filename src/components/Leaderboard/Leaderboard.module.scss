@@ -6,7 +6,7 @@
 .butt {
     background-color: #ff5757;
     height:100%;
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 13px;
     text-align: center;
     text-transform: capitalize;
@@ -26,11 +26,15 @@
   }
   .scroller {
     width: 300px;
-    height: 300px;
+    height: 400px;
     overflow-y: scroll;
-    scrollbar-color: white white;
-    scrollbar-width: thin;
-    // overflow: hidden;
+    &::-webkit-scrollbar {
+      width: 0.175rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0.5rem;
+        background-color: #747474;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -51,3 +55,10 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+.description{
+    font-size: .75rem;
+    margin: .25rem auto;
+    width: 70%;
+    text-align: center;
+}

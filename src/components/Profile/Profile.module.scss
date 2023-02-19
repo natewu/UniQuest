@@ -6,7 +6,7 @@
 .butt {
     background-color: #ff5757;
     height:100%;
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 13px;
     text-align: center;
     text-transform: capitalize;
@@ -28,14 +28,14 @@
 
     width: 250px;
     height: 80px;
-    border-width: 6px;
-
+    border-width: 0 !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     padding: 10px;
 
     border: solid;
 
     outline: solid;
-    border-radius: 40px;
+    border-radius: 15px;
 
     /* color | style */
     outline: #f66 dashed;
@@ -56,14 +56,39 @@
 }
 
 .cardBody {
-    column-count: 2;
+    display: flex;
+    flex-flow: row nowrap;
+    // column-count: 2;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+    text-align: right;
+}
+
+.card__info{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: right;
+    padding: 0 0.25rem;
+    text-align: right;
+
+    *{
+        margin: 0 !important;
+        padding: 0;
+    text-align: right;
+
+    }
 }
 
 .profile {
-    margin-top: -7px;
-    width: 70px;
-    height: auto;
-    border-radius: 140px;
+   
+    // margin-top: -7px;
+    width: 3.5rem !important;
+    max-height: 3.5rem !important;
+    border-radius: 50%;
     
 
     object-fit:cover;

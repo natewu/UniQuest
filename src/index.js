@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import { QR } from "./components/QR/QR";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Shop from "components/Shop/Shop";
 import { Status } from "./components/Status/Status";
 import reportWebVitals from './reportWebVitals';
 import { store } from "redux/store";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/status",
     element: <App><Status/></App>,
+  },
+  {
+    path: "/shop",
+    element: <App><Shop/></App>,
   },
   {
     path: "/leaderboard",
