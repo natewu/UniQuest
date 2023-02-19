@@ -29,6 +29,7 @@ function Nav() {
             <Button 
                Icon={AddIcon}
                toggle={()=>toggleScanner(true)}
+               className={styles.Scanner}
             />
             <Button Icon={AccountCircleIcon} toggle={() => console.log("clicked")}/>
          </div>
@@ -36,10 +37,10 @@ function Nav() {
    )
 }
 
-function Button({Icon, toggle}: {Icon: React.FC, toggle: () => void}){
+function Button({Icon, toggle, className}: {Icon: React.FC, toggle: () => void, className?: string}){
    return (
       <div className={styles.Button}>
-         <IconButton onClick={toggle}>
+         <IconButton className={className} onClick={toggle}>
             <Icon />
          </IconButton>
       </div>
