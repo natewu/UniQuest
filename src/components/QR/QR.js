@@ -41,7 +41,7 @@ export function QR(){
           setData2(data2);
           });
 
-      }, 1000);
+      }, 5000);
         return () => clearInterval(interval);
     }, []);
    return (
