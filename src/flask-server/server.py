@@ -67,8 +67,14 @@ def validQR():
 			if screen not in user.screens:
 				user.points += screen.points
 				user.screens.append(screen)	
+				for screen2 in screens:
+					if screen2.id != screen.id and screen2 not in user.screens:
+						db.session.commit()
+						return {'valid': "Good job!", "points": str(screen.points), "description":screen.description, "imageURL":screen.imageURL}
+				
+				user.points += screen.points + 50
 				db.session.commit()
-				return {'valid': "Good job!", "points": str(screen.points), "description":screen.description, "imageURL":screen.imageURL}
+				return {'valid': "Good job!", "points": str(screen.points + 50) + " for finishing this day's", "description":screen.description, "imageURL":screen.imageURL}
 			else:
 				return {'valid': "You already scanned this :)"}
 	return {'valid': ""}
