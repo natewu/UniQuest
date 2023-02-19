@@ -1,0 +1,11 @@
+.Shop{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 85vh;
+    padding: 0 0 2rem 0;
+    width: 100%;
+    h1{
+        font-size: 1.25rem;
+        padding: 1rem 0;
+    }
+}

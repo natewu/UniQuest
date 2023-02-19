@@ -5,7 +5,7 @@
   flex-flow: column nowrap;
   font-family: "Raleway", sans-serif;
   height: 100vh;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 100%;
   flex: 1;
   min-height: 90vh;
@@ -53,4 +53,28 @@
   background-color: transparent !important;
   margin-bottom: 1rem !important;
   // max-width: 1000px !important;
+}
+
+.Header{
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+  font-weight: 450;
+  // font-stretch: expanded;
+  padding: 2rem 1rem 1rem 1rem;
+  // border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #cf0722;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  *{
+    margin: 0 0.25rem;
+  }
+  img{
+    margin-left: -5px;
+  }
 }

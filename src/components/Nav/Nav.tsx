@@ -8,10 +8,11 @@ import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import React from 'react'
 import { setScanner } from "../../redux/reducers/drawerSlice";
 import styles from './Nav.module.scss'
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
    const dispatch = useDispatch();
-   // const history = useHistory();
+   const history = useNavigate();
 
    function toggleScanner(toggle: boolean) {
       dispatch(
@@ -26,18 +27,21 @@ function Nav() {
          <div className={styles.Buttons}>
             <Button 
                Icon={HomeIcon}
-               toggle={()=>toggleScanner(true)}
+               toggle={()=>history('/')}
             />
             <Button 
                Icon={LocalAtmIcon}
-               toggle={()=>toggleScanner(true)}
+               toggle={()=>history('/shop')}
             />
             <Button 
                Icon={AddIcon}
                toggle={()=>toggleScanner(true)}
                className={styles.Scanner}
             />
-            <Button Icon={AccountCircleIcon} toggle={() => console.log("clicked")}/>
+            <Button 
+               Icon={AccountCircleIcon} 
+               toggle={()=>history('/profile')}
+            />
          </div>
       </div>  
    )

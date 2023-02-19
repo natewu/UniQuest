@@ -7,10 +7,11 @@ import React from "react";
 import Scanner from "./components/Scanner/Scanner";
 import { SwipeableDrawer } from "@mui/material";
 import styles from './App.module.scss';
+import { useNavigate } from "react-router-dom";
 
-function App() {
+function App({children}: {children: React.ReactNode}) {
    // const [scanner, setScanner] = React.useState(false)
-
+   const history = useNavigate();
    const openScanner = useSelector(selectScanner);
    const openMessages = useSelector(selectMessages);
    const data = useSelector(selectData);
@@ -24,9 +25,15 @@ function App() {
       dispatch(setMessages(boolean));
       toggleScanner(false);
    }
-   console.log(data);
+
    return (
       <div className={styles.App}>
+         <h1 className={styles.Header} onClick={() => history('/leaderboard')}>
+            <img alt="logo" src="/images/logo.png" width="32" height="32"
+         />
+            UniQuest
+         </h1>
+         {children}
          <Dialog open={openMessages} onClose={()=>toggleMessages(false)}>
             <SuccessDialog data={data}/>
          </Dialog>
@@ -36,7 +43,6 @@ function App() {
             onClose={()=>toggleScanner(false)}
             onOpen={()=>toggleScanner(true)}
          >
-            
             <Scanner/>
          </SwipeableDrawer>
          <Nav/>
