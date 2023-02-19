@@ -47,7 +47,9 @@ function Scanner() {
          <div className={styles.Close}>
             <div className={styles.Line}/>
          </div>
-            <h1>Scan for Points!</h1>
+            <h1>Scanner</h1>
+            <h1>{res ? res : ""}</h1>
+            <h2>You have {points} points</h2>
          <div className={styles.Webcam}>
             <QrReader 
                // ViewFinder={(
