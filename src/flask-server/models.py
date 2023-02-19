@@ -14,6 +14,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60))    
     points = db.Column(db.Integer, default=0)
+    totalPoints = db.Column(db.Integer, default=0)
     
     screens = db.relationship('Screen', secondary=user_to_screenQR, backref='users')
     
@@ -34,7 +35,7 @@ class Screen(db.Model):
 class UsersShema(ma.Schema):
     class Meta:
         # Fields to expose
-        fields = ("id","firstName","lastName", "email", "password", "points")
+        fields = ("id","firstName","lastName", "email", "password", "points", "totalPoints")
 class ScreenShema(ma.Schema):
     class Meta:
         # Fields to expose
