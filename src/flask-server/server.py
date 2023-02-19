@@ -156,7 +156,7 @@ def posts():
 '''
 if __name__ == "__main__":
 	#start minute timer
-	timer = RepeatTimer(5, minuteUpdate)
+	timer = RepeatTimer(2, minuteUpdate)
 	#keep this code for the thread to be killed:
 	timer.daemon = True
 	timer.start()
