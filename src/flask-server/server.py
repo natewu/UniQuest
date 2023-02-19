@@ -63,6 +63,13 @@ def getPointsFromID():
 	screen = Screen.query.get(content.get("id"))
 	return jsonify(screen.points)
 
+# turn the id to the points of the QR code
+@app.route("/getPointsFromUser", methods=["GET"], strict_slashes=False)
+def getPointsFromUserID():
+	content = request.args
+	user = User.query.get(content.get("id"))
+	return jsonify(user.points)
+
 
 # Route for to check if QR code is valid. If it is, increment by right number of points
 @app.route("/validQR", methods=["POST"], strict_slashes=False)
