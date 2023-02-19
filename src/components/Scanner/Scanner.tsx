@@ -18,7 +18,7 @@ function Scanner() {
    const dispatch = useDispatch();
 
    useEffect(() => {
-      if(data !== ""){
+      if(data.valid !== ""){
          fetch(`/validQR`, {
             method: "POST", 
             body: `string=${data}`,
@@ -65,7 +65,7 @@ function Scanner() {
             <div className={styles.Line}/>
          </div>
             <h1>Scanner</h1>
-            <h1>{res ? res : ""}</h1>
+            {/* <h1>{res ? res : ""}</h1> */}
             <h2>You have {points} points</h2>
          <div className={styles.Webcam}>
             <QrReader 
