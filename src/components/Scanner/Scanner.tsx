@@ -25,11 +25,7 @@ function Scanner() {
          .then(res => {
             console.log(res);
             setRes(res.valid)
-            dispatch(
-               setDataJSON(res)
-              
-            );
-            console.log(res)
+            
          });
       }
    }, [data]);
@@ -50,9 +46,9 @@ function Scanner() {
    useEffect(() => {
       if(res === "Good job!"){
          dispatch(
-            setMessages(true)
-         )
-
+            setMessages(true),
+            setDataJSON(res)
+         );
       }
    }, [res]);
 
