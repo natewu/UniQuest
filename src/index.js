@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/qr",
+    path: "/qr/:id",
     element: <QR/>,
   }
 ]);
