@@ -27,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/status",
     element: <Status/>,
+  }, 
+  {
+    path: "/leaderboard",
+    element: <Leaderboard/>,
   }
 ]);
 
