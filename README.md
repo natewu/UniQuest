@@ -19,6 +19,7 @@ Delete the "database.db" file in src/flask-server and RERUN "python server.py".
 
 This will re-migrate the database schema and initialize any default database values from models.py
 
+# About
 ### Considering the on-campus experience
 UniQuest is a QR scavenger hunt game/application that incentivizes students to travel to different places around the university campus, learning about its importance in their student life, while gaining points that can be used to explore new activities offered by the university.
 
